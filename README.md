@@ -15,3 +15,6 @@ Just open a `HelpMake.txt` file. Highlighting works automatically.
 
 ## License
 Thie program is licensed under the MIT License, see LICENSE for details.
+
+## Icon
+Icon maded whit canva
