@@ -1,0 +1,37 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "HelpMake",
+    "scopeName": "source.helpmake",
+    "patterns": [
+        { "include": "#comments" },
+        { "include": "#blocks" },
+        { "include": "#fields" },
+        { "include": "#values" }
+    ],
+    "repository": {
+        "comments": {
+            "patterns": [{
+                "name": "comment.line.number-sign.helpmake",
+                "match": "#.*$"
+            }]
+        },
+        "blocks": {
+            "patterns": [{
+                "name": "keyword.control.block.helpmake",
+                "match": "\\b(InputFiles|Includes|Flags|Fetch|PreBuild|PostBuild|Modules|Config)\\b"
+            }]
+        },
+        "fields": {
+            "patterns": [{
+                "name": "support.type.property-name.helpmake",
+                "match": "\\b(Compiler|Version|Output|Run|InputFiles|Includes|Flags|Modules)\\b(?=\\s*:)"
+            }]
+        },
+        "values": {
+            "patterns": [{
+                "name": "string.unquoted.value.helpmake",
+                "match": "(?<=:\\s*).*$"
+            }]
+        }
+    }
+}
