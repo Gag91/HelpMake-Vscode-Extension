@@ -2,15 +2,16 @@
     "name": "helpmake",
     "icon": "icon.png",
     "displayName": "HelpMake",
-    "description": "Syntax highlighting for HelpMake.txt",
-    "version": "1.0.0",
+    "description": "Syntax highlighting for HelpMake.txt build files",
+    "version": "1.1.0",
     "publisher": "Xavi99",
     "engines": { "vscode": "^1.60.0" },
     "categories": ["Programming Languages"],
+    "keywords": ["helpmake", "build system", "syntax highlighting", "c++", "zig", "go"],
     "repository": {
-    "type": "git",
-    
-    "url": "https://github.com/Gag91/HelpMake-Vscode-Extension" },
+        "type": "git",
+        "url": "https://github.com/Gag91/HelpMake-Vscode-Extension"
+        },
     "contributes": {
         "languages": [{
             "id": "helpmake",
@@ -25,4 +26,5 @@
             "path": "./syntaxes/helpmake.tmLanguage.json"
         }]
     }
+    
 }

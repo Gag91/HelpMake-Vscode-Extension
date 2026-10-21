@@ -4,7 +4,9 @@
     "scopeName": "source.helpmake",
     "patterns": [
         { "include": "#comments" },
+        { "include": "#config-and-dependency-headers" },
         { "include": "#blocks" },
+        { "include": "#variables" },
         { "include": "#fields" },
         { "include": "#values" }
     ],
@@ -15,22 +17,37 @@
                 "match": "#.*$"
             }]
         },
+        "config-and-dependency-headers": {
+            "patterns": [{
+                "match": "\\b(Config|Dependency)\\s*:\\s*([a-zA-Z_][a-zA-Z0-9_-]*)\\s*\\{",
+                "captures": {
+                    "1": { "name": "keyword.control.block.helpmake" },
+                    "2": { "name": "entity.name.type.block.helpmake" }
+                }
+            }]
+        },
         "blocks": {
             "patterns": [{
                 "name": "keyword.control.block.helpmake",
-                "match": "\\b(InputFiles|Includes|Flags|Fetch|PreBuild|PostBuild|Modules|Config)\\b"
+                "match": "\\b(InputFiles|Includes|Flags|Modules|Fetch|PreBuild|PostBuild|Copy|Set|Arguments)\\b(?=\\s*\\{)"
+            }]
+        },
+        "variables": {
+            "patterns": [{
+                "name": "variable.other.helpmake",
+                "match": "\\[\\[[^\\]]+\\]\\]"
             }]
         },
         "fields": {
             "patterns": [{
                 "name": "support.type.property-name.helpmake",
-                "match": "\\b(Compiler|Version|Output|Run|InputFiles|Includes|Flags|Modules)\\b(?=\\s*:)"
+                "match": "\\b(Compiler|Version|Output|Kind|Run|Jobs|PCH|Depends|Arguments|InputFiles|Includes|Flags|Modules|Git|Url|Path|Tag|Commit|Hash|Build|Include|Link|LinkDir|LinkFlags)\\b(?=\\s*:)"
             }]
         },
         "values": {
             "patterns": [{
                 "name": "string.unquoted.value.helpmake",
-                "match": "(?<=:\\s*).*$"
+                "match": "(?<=:)(.+)$"
             }]
         }
     }
