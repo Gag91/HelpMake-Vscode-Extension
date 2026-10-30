@@ -29,7 +29,7 @@
         "blocks": {
             "patterns": [{
                 "name": "keyword.control.block.helpmake",
-                "match": "\\b(InputFiles|Includes|Flags|Modules|Fetch|PreBuild|PostBuild|Copy|Set|Arguments)\\b(?=\\s*\\{)"
+                "match": "\\b(InputFiles|Includes|Flags|Modules|Fetch|PreBuild|PostBuild|Copy|Set|Arguments|Gen)\\b(?=\\s*\\{)"
             }]
         },
         "variables": {
